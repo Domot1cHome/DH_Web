@@ -11,16 +11,6 @@ class ControladorIndex extends CI_Controller
 
 	public function index()
 	{
-
 		$this->load->view('Index');
-		
-	}
-
-	public function Hola(Type $var = null)
-	{
-		
-			$data = $this->input->post();
-			print_r($data);
-		
 	}
 }
