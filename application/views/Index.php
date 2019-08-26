@@ -13,6 +13,39 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 
+<?php
+
+$form = array(
+    'action'  => 'ControladorLogin/Hola'
+);
+
+$input_Usuario = array(
+    'class'  => 'input100',
+    'name'   => 'usuario',
+    'id'   => 'usuario',
+    'placeholder'   => 'Usuario',
+);
+
+$input_Codigo = array(
+    'class'  => 'input100',
+    'type' => 'password',
+    'name'   => 'password',
+    'id'   => 'password',
+    'placeholder'   => 'Contraseña',
+);
+
+$submit_Login = array(
+    'class'  => 'login100-form-btn',
+    'name'   => 'boton',
+    'id'   => 'boton',
+    'value'   => 'Iniciar sesión',
+
+);
+
+
+
+?>
+
 <body>
     <div class="padre">
 
@@ -21,52 +54,40 @@
                 <img src="" width="30" height="30" class="d-inline-block align-top" alt="">
                 Domotic Home
             </a>
-            <form class="form-inline" style="">
-                <a href="#ventanaModal" role="button" class="btn btn-outline-danger my-2 my-sm-0" data-toggle="modal">Login</a>
 
+            <a href="#ventanaModal" role="button" class="btn btn-outline-danger my-2 my-sm-0" data-toggle="modal">Login</a>
 
-            </form>
         </nav>
 
         <div id="ventanaModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    </div>
 
                     <div class="modal-body">
                         <div class="container-login100">
                             <div class="wrap-login100">
                                 <form class="login100-form validate-form p-l-40 p-r-55 p-t-138">
+                                    <?php echo form_open('ControladorIndex/Hola') ?>
                                     <span class="login100-form-title">
                                         Login
                                     </span>
 
-                                    <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter username">
-                                        <input class="input100" type="text" name="username" placeholder="Usuario">
-                                        <span class="focus-input100"></span>
+                                    <div class="wrap-input100 validate-input m-b-16" data-validate="Digite el usuario">
+
+                                        <?php echo form_input($input_Usuario) ?>
                                     </div>
 
-                                    <div class="wrap-input100 validate-input" data-validate="Please enter password">
-                                        <input class="input100" type="password" name="pass" placeholder="Contraseña">
-                                        <span class="focus-input100"></span>
-                                    </div>
+                                    <div class="wrap-input100 validate-input" data-validate="Digite la contraseña">
 
-                                    <div class="text-right p-t-13 p-b-23">
-
+                                        <?php echo form_input($input_Codigo) ?>
                                     </div>
 
                                     <div class="container-login100-form-btn">
-                                        <button class="login100-form-btn">
-                                            Iniciar sesión
-                                        </button>
+
+                                        <?php echo form_submit($submit_Login) ?>
                                     </div>
 
-                                    <div class="text-right p-t-13 p-b-23">
-
-                                    </div>
-
+                                    <?php echo form_close() ?>
                                 </form>
                             </div>
                         </div>
@@ -75,6 +96,11 @@
                 </div>
             </div>
         </div>
+
+        
+
+        <!--VIDEO FONDO-->
+        <video src="/DH_Web/application/fon.mp4" autoplay loop muted></video>
 
         <footer id="footer" class="footer-1">
             <div class="main-footer widgets-dark typo-light">
@@ -88,7 +114,7 @@
                             </div>
                         </div>
 
-                                
+
                         <div class="col-xs-12 col-sm-6 col-md-3">
 
                             <div class="widget no-box">

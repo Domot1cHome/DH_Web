@@ -7,17 +7,20 @@ class ControladorIndex extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		
 	}
 
 	public function index()
 	{
-		
+
 		$this->load->view('Index');
+		
 	}
 
-	public function index2()
+	public function Hola(Type $var = null)
 	{
-		$this->load->view('Index2');
+		
+			$data = $this->input->post();
+			print_r($data);
+		
 	}
 }
