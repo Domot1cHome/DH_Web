@@ -118,6 +118,8 @@
         </div>
     </div>
 
+    <video src="<?php echo base_url(); ?>recursos/fon1.mp4" autoplay loop muted></video>
+
     <footer class="footer-distributed">
 
         <div class="footer-left">
@@ -126,7 +128,7 @@
 
             <p class="footer-links">
                 <a href="#">Home</a>
-                ·            
+                ·
                 <a href="#">Acerca de nosotros</a>
                 ·
                 <a href="#">Contáctanos</a>
