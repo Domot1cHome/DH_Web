@@ -13,6 +13,11 @@ class Controlador extends CI_Controller {
 		$this->load->view('Index');
 	}
 
+	public function Prueba11()
+	{
+		$this->load->view('Pruebas/index');
+	}
+
 	public function Prueba2()
 	{
 		$this->load->view('Index2');
