@@ -12,33 +12,30 @@ class Controlador extends CI_Controller
 
 	public function index()
 	{
-		echo 'Dirijase a una ruta ;D';
-	}
-
-	public function Prueba1()
-	{
-		$this->load->view('Index');
-	}
-
-	public function Prueba11()
-	{
-		$this->load->view('layouts/encabezado');
+		$this->load->view('layouts/Login/encabezado');
 		$this->load->view('Pruebas/index');
-		$this->load->view('layouts/piePagina');
+		$this->load->view('layouts/Login/piePagina');
 
 		if ($this->input->post()) {
 			$data = $this->input->post();
 			unset($data['boton']);
-			// print_r($data);
 			$respuesta = $this->M_Index->Login($data['usuario'], $data['password']);
 			if (count($respuesta) == 0) {
 				echo '<p style="color:white">Usuario o contraseña incorrectos</p>';
 			} else {
-				// print_r($respuesta);
-				$this->load->view('Pruebas/ambientes');
+				
+				redirect('/Controlador/Ambientes');
 			}
 		}
 	}
+
+	public function Ambientes()
+	{
+		$this->load->view('layouts/encabezado');
+		$this->load->view('Pruebas/ambientes');
+		$this->load->view('layouts/piePagina');
+	}
+
 
 	public function Prueba2()
 	{

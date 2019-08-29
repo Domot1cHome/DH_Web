@@ -29,15 +29,6 @@
 
 ?>
 
-<nav class="navbar navbar-secundary bg-light">
-    <a class="navbar-brand" href="<?php echo base_url()?>Controlador/Prueba11">
-        <img src="https://raw.githubusercontent.com/alemupx/DomoticHomeFiles/master/Logotipos/logo-3.png" width="30" height="30" class="d-inline-block align-top" alt="">
-        Domotic Home
-    </a>
-
-    <a href="#ventanaModal" role="button" class="btn btn-outline-danger my-2 my-sm-0" data-toggle="modal">Login</a>
-
-</nav>
 
 <div id="ventanaModal" class="modal fade">
     <div class="modal-dialog">
