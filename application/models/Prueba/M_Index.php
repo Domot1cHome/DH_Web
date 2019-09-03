@@ -5,12 +5,11 @@ class M_Index extends CI_Model
 {
     function __construct()
     {
-
         parent::__construct();
         $this->load->database();
     }
 
-    function Login($usuario,$codigo)
+    function Login($usuario, $codigo)
     {
         $query = $this->db->select('usu_usuario,usu_codigo');
         $query = $this->db->where('usu_usuario', $usuario);

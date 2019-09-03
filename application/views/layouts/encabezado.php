@@ -22,6 +22,8 @@
 
 </head>
 
+<?php unset($_SESSION['token']); ?>
+
 <body>
 
     <nav class="navbar navbar-secundary bg-light">

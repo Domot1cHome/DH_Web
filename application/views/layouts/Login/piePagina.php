@@ -2,7 +2,8 @@
 
     <div class="footer-left">
 
-        <h3>Domotic<span>Home</span></h3>
+        <!-- <h3>Domotic<span>Home</span></h3> -->
+        <img src="<?php echo base_url(); ?>recursos/logo.png" height="40" width="160">
 
         <p class="footer-links">
             <a href="#">Home</a>
