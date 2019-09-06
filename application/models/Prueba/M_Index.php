@@ -18,3 +18,5 @@ class M_Index extends CI_Model
         return $query->result();
     }
 }
+
+/* Fin del Archivo M_Index.php */
