@@ -547,9 +547,9 @@ section .section-title {
     width: 100%;
     text-align: left;
     font: bold 16px sans-serif;
-    padding: 15px 50px;
+    padding: 5px 50px;
     margin-top: 0px;
-    position: absolute;
+    position: fixed;
     bottom: 0;
 }
 

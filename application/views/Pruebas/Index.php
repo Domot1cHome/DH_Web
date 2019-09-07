@@ -66,3 +66,37 @@
 
 <video src="<?php echo base_url(); ?>recursos/fon1.mp4" autoplay loop muted></video>
 
+<br>
+<br>
+<center>
+<div class="card" style="width: 80%; height: 300px;" margin="auto">
+    <h1>DOMOTIZA TU HOGAR</h1>
+
+    
+<!-- inicio scroll -->
+
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+            <img src="/Jn/public/images/f.jpg" class="d-block w-100" widght="100" height="350">
+            </div>
+            <div class="carousel-item">
+            <img src="/Jn/public/images/fon.jpg" class="d-block w-100" widght="100" height="350">
+            </div>
+            <div class="carousel-item">
+            <img src="/Jn/public/images/dom.jpg" class="d-block w-100" widght="100" height="350">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <!-- fin scroll -->
+
+</center>
