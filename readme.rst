@@ -12,3 +12,9 @@ Ten en cuenta que para mantener el control de versiones de una aplicación; el o
 Creación de ramas, moviendose entre ramas: https://www.youtube.com/watch?v=j0U9jBmP3LM
 
 Flujos de trabajo y commits: https://www.youtube.com/watch?v=Pw4TOTIkhfk
+
+###################
+¿Cómo integrar una rama hija a la rama padre (Master)?
+###################
+
+https://www.youtube.com/watch?v=vu4Rv1SmzwM
