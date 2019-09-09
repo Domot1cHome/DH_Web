@@ -1,4 +1,11 @@
 ###################
+¿Buscar hacer algún aporte a los repositorios?
+###################
+
+Ten en cuenta que para mantener el control de versiones de una aplicación; el orden de las modificaciones es indispensable. Y Git ofrece herramientas como Branches para ello. 
+
+
+###################
 ¿Cómo hacer un commit usando Branches en Git?
 ###################
 
