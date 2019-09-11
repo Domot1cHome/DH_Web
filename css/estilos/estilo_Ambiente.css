@@ -1,0 +1,22 @@
+html,
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: red;
+}
+
+.contenedor1 {
+    display: flex;
+    text-align: center;
+    background-color: blue;
+    margin-top: 10%;
+    margin-bottom: 9%;
+}
+
+.contenedor2 {
+    display: flex;
+    text-align: center;
+    background-color: green;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
