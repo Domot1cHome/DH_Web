@@ -7,14 +7,13 @@ class ControladorIndex extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-		
 		$this->load->model('Prueba/M_Index');
 	}
 
 	public function index()
 	{
 		$this->load->view('layouts/Login/encabezado');
-		$this->load->view('Pruebas/index');
+		$this->load->view('Index');
 		$this->load->view('layouts/Login/piePagina');
 
 		if ($this->input->post()) {

@@ -13,7 +13,7 @@ class ControladorAmbientes extends CI_Controller
     {
 
         $this->load->view('layouts/encabezado');
-        $this->load->view('Pruebas/ambientes');
+        $this->load->view('Ambientes');
         $this->load->view('layouts/piePagina');
     }
 }
