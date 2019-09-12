@@ -8,15 +8,15 @@ https://www.youtube.com/watch?v=3a2x1iJFJWc
 
 
 ###################
-¿Cómo hacer un commit usando Branches en Git?
+Branches.
 ###################
 
 Creación de ramas, moviendose entre ramas: https://www.youtube.com/watch?v=j0U9jBmP3LM
 
 Flujos de trabajo y commits: https://www.youtube.com/watch?v=Pw4TOTIkhfk
 
-###################
-¿Cómo fusionar una rama hija a la rama padre (Master)?
-###################
+Rastreo de ramas remotas: https://www.gitguys.com/topics/tracking-branches-and-remote-tracking-branches/
 
-https://www.youtube.com/watch?v=vu4Rv1SmzwM
+Fusión de ramas: https://www.youtube.com/watch?v=vu4Rv1SmzwM
+
+
