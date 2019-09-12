@@ -1,36 +1,20 @@
 ###################
-What is CodeIgniter
+¿Buscas hacer algún aporte a los repositorios?
 ###################
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
 
-*******************
-Release Information
-*******************
+Ten en cuenta que para mantener el control de versiones de una aplicación; el orden de las modificaciones es indispensable. Y Git ofrece herramientas como Branches y Workflows para ello.
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
 
 ###################
 Branches.
 ###################
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+Creación de ramas, moviendose entre ramas: https://www.youtube.com/watch?v=j0U9jBmP3LM
 
-*******************
-Server Requirements
-*******************
+Flujos de trabajo y commits: https://www.youtube.com/watch?v=Pw4TOTIkhfk
 
 Rastreo de ramas remotas: https://www.gitguys.com/topics/tracking-branches-and-remote-tracking-branches/
 
 Fusión de ramas: https://www.youtube.com/watch?v=vu4Rv1SmzwM
-
 
