@@ -14,11 +14,7 @@ class Ambiente extends CI_Controller
 
     public function index(){
 
-        if ($this->session->userdata("login")){
-    
-        } else {
-          redirect(base_url());
-        }
+
     
           $data['page'] = ucfirst("ambiente"); //Envío titulo para las rutas que muestra en pantalla
           $data['ambiente']= $this->M_ambiente->getAll();

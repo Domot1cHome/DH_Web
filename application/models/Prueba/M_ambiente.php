@@ -4,6 +4,12 @@ date_default_timezone_set('America/Bogota');
 
 class M_ambiente extends CI_Model{
 
+  public function __construct() 
+  {
+        parent::__construct(); 
+        $this->load->database();
+  }
+
     function getAll(){
 
         $query = $this->db->select('amb_id,
