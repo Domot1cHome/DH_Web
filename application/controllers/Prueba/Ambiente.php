@@ -10,6 +10,7 @@ class Ambiente extends CI_Controller
         $this->load->model('Prueba/M_ambiente');
         $this->load->library('form_validation');
         $this->load->helper('form');
+        echo 'Hola';
     }
 
     public function index(){
