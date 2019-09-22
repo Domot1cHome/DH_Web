@@ -24,7 +24,7 @@ class Controlador extends CI_Controller
 				echo '<p style="color:white">Usuario o contraseña incorrectos</p>';
 			} else {
 				
-				redirect('/Controlador/Ambientes');
+				redirect('Controlador/Ambientes');
 			}
 		}
 	}

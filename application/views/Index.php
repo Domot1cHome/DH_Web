@@ -62,4 +62,4 @@ $submit_Login = array(
     </div>
 </div>
 
-<video src="<?php echo base_url(); ?>recursos/fon1.mp4" autoplay loop muted></video>
+<video src="<?php echo base_url(); ?>recursos/fondo.mp4" autoplay loop muted></video>
