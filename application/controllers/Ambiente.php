@@ -7,7 +7,7 @@ class Ambiente extends CI_Controller
   function __construct()
   {
     parent::__construct();
-    $this->load->model('Prueba/M_ambiente');
+    $this->load->model('M_ambiente');
     $this->load->library('form_validation');
     $this->load->helper('form');
   }
@@ -15,80 +15,56 @@ class Ambiente extends CI_Controller
   public function index()
   {
 
-    $data['page'] = ucfirst("ambiente"); //Envío titulo para las rutas que muestra en pantalla
-    $data['ambiente'] = $this->M_ambiente->getAll();
-    $this->load->view('Pruebas/Ambiente/index', $data);
+    $data['page'] = ucfirst("ambiente");
+    $data['ambiente'] = $this->M_ambiente->TraerTodos();
+    $this->load->view('layouts/encabezado');
+    $this->load->view('ambiente/index', $data);
+    $this->load->view('layouts/piePagina');
   }
 
-  public function agregar()
+  public function Crear()
   {
 
     if ($this->input->post()) {
-
-      $this->form_validation->set_rules('usu_nombre', 'Nombre', 'required|trim');
-      $this->form_validation->set_rules('usu_password', 'password', 'trim');
-
-      if ($this->form_validation->run() == TRUE) {
-        $this->M_ambiente->add();
-
-        redirect('Prueba/ambiente/');
-      } else {
-        $this->load->view('layouts/header');
-        $this->load->view('layouts/aside', $data);
-        $this->load->view('Pruebas/Ambiente/crear', $data);
-        $this->load->view('layouts/footer');
-      }
+      $this->M_ambiente->Crear();
+      redirect('ambiente/');
     } else {
 
-      $this->load->view('layouts/header');
-      $this->load->view('layouts/aside', $data);
-      $this->load->view('Pruebas/Ambiente/crear', $data);
-      $this->load->view('layouts/footer');
+      $this->load->view('layouts/encabezado');
+      $this->load->view('Ambiente/crear');
+      $this->load->view('layouts/piePagina');
     }
   }
 
-  public function modificar($id = NULL)
+  public function Editar($id = NULL)
   {
 
-    $data['ambiente'] = $this->M_ambiente->getAll();
+    $data['ambiente'] = $this->M_ambiente->TraerTodos();
 
+    //Si se escribe un valor numerico o nulo se mostrara como una falta de ID. 
     if ($id == NULL or !is_numeric($id)) {
       echo "Error Falta ID";
       return;
     }
 
+    //Si se envian datos
     if ($this->input->post()) {
-
-      $this->form_validation->set_rules('usu_nombre', 'Nombre', 'required|trim');
-      $this->form_validation->set_rules('usu_password', 'password', 'trim');
-
-      if ($this->form_validation->run() == TRUE) {
-
-        $this->M_ambiente->edit($id);
-
-        redirect('Prueba/ambiente/');
-      } else {
-        $this->load->view('layouts/header');
-        $this->load->view('layouts/aside', $data);
-        $this->load->view('Pruebas/Ambiente/modificar');
-        $this->load->view('layouts/footer');
-      }
+      $this->M_ambiente->Editar($id);
+      redirect('ambiente/');
     } else {
-
-      $data['datos_ambiente'] = $this->M_ambiente->get_by_id($id);
-
-      if (empty($data['datos_ambiente'])) {
+      //Verificamos que el id exista 
+      $data['ambiente'] = $this->M_ambiente->TraerPorId($id);
+      if (empty($data['ambiente'])) {
         echo "El ID es Invalido";
       } else {
-        $this->load->view('layouts/header');
-        $this->load->view('layouts/aside', $data);
-        $this->load->view('Pruebas/Ambiente/modificar', $data);
-        $this->load->view('layouts/footer');
+        $this->load->view('layouts/encabezado');
+        $this->load->view('Ambiente/editar', $data);
+        $this->load->view('layouts/piePagina');
       }
     }
   }
 
-  public function eliminar($id = NULL)
+  public function Eliminar($id = NULL)
   {
     if ($id == NULL or !is_numeric($id)) {
       echo "Error Falta ID";

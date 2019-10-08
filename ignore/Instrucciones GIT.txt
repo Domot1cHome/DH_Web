@@ -23,3 +23,4 @@
     Si llegaste a este paso es por que estas listo para fusionar la rama luis: $ git merge origin/luis
     Una vez se transfiera los cambios estas listo para empezar a aplicar tus cambios. 
 
+

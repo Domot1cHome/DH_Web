@@ -7,7 +7,7 @@ class Index extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model('Prueba/M_Index');
+		$this->load->model('M_Index');
 	}
 
 	public function index()
@@ -23,13 +23,13 @@ class Index extends CI_Controller
 			if (count($respuesta) == 0) {
 				echo '<p style="color:white">Usuario o contraseña incorrectos</p>';
 			} else {
-				redirect('/Prueba/A');
+				redirect('Ambiente');
 			}
 		}
 	}
 
-	public function Prueba2()
+	public function Simulador()
 	{
-		$this->load->view('Index2');
+		$this->load->view('Simulador');
 	}
 }
