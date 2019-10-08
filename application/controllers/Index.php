@@ -23,7 +23,7 @@ class Index extends CI_Controller
 			if (count($respuesta) == 0) {
 				echo '<p style="color:white">Usuario o contraseña incorrectos</p>';
 			} else {
-				redirect('Ambiente');
+				redirect('ambiente');
 			}
 		}
 	}

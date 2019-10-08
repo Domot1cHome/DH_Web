@@ -24,14 +24,17 @@ class M_ambiente extends CI_Model
 
   function TraerPorId($id)
   {
-
-    $query = $this->db->select('amb_id,
-                                    amb_nombre,
-                                    amb_capacidad,
-                                    fecha_creado,
-                                    fecha_modificado');
+    $query = $this->db->select('amb_id,amb_nombre,amb_capacidad, fecha_creado,fecha_modificado');
     $query = $this->db->where('amb_id', $id);
     $query = $this->db->get('tb_ambiente');
+    return $query->result();
+  }
+
+  function TraerPorNombre($nombre)
+  {
+    $query = $this->db->select('amb_id,amb_nombre,amb_capacidad, fecha_creado,fecha_modificado');
+    $query = $this->db->where('amb_nombre', $nombre);
+    $query = $this->db->get('tb_ambiente'); 
     return $query->result();
   }
 
@@ -41,9 +44,8 @@ class M_ambiente extends CI_Model
     $data_insertar = $this->input->post();
     unset($data_insertar['btn_guardar']);
     $data_insertar['fecha_creado'] = date("Y-m-d H:i:s");
-    print_r($data_insertar);
-    // $this->db->insert('tb_ambiente', $data_insertar);
-    // return $this->db->insert_id();
+    $this->db->insert('tb_ambiente', $data_insertar);
+    return $this->db->insert_id();
   }
 
   function Editar($id)
