@@ -27,9 +27,4 @@ class Index extends CI_Controller
 			}
 		}
 	}
-
-	public function Simulador()
-	{
-		$this->load->view('Simulador');
-	}
 }

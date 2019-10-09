@@ -1,13 +1,13 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Ambiente extends CI_Controller
+class Usuario extends CI_Controller
 {
 
   function __construct()
   {
     parent::__construct();
-    $this->load->model('M_ambiente');
+    $this->load->model('M_Usuario');
     $this->load->library('form_validation');
     $this->load->helper('form');
   }
@@ -15,30 +15,31 @@ class Ambiente extends CI_Controller
   public function index()
   {
 
-    $data['page'] = ucfirst("Ambientes");
-    $data['ambiente'] = $this->M_ambiente->TraerTodos();
+    $data['page'] = ucfirst("Usuarios");
+    $data['usuario'] = $this->M_Usuario->TraerTodos();
     $this->load->view('layouts/encabezado', $data);
-    $this->load->view('ambiente/index', $data);
+    $this->load->view('usuario/index', $data);
     $this->load->view('layouts/piePagina');
   }
 
   public function Crear()
   {
-    $data['page'] = ucfirst("Ambiente");
+    $data['page'] = ucfirst("Usuario");
     if ($this->input->post()) {
-      $this->form_validation->set_rules('amb_nombre', 'Nombre ambiente', 'required');
-      $this->form_validation->set_rules('amb_capacidad', 'Cantidad de aprendices', 'required|max_length[2]');
+      $this->form_validation->set_rules('usu_nombre', 'Nombres', 'required');
+      $this->form_validation->set_rules('usu_apellido', 'Apellidos', 'required');
+      $this->form_validation->set_rules('usu_num_doc', 'Número de documento', 'required|max_length[11]');
       if ($this->form_validation->run() == TRUE) {
-        $this->M_ambiente->Crear();
-        redirect('ambiente');
+        $this->M_Usuario->Crear();
+        redirect('usuario');
       } else {
         $this->load->view('layouts/encabezado', $data);
-        $this->load->view('Ambiente/crear');
+        $this->load->view('usuario/crear');
         $this->load->view('layouts/piePagina');
       }
     } else {
       $this->load->view('layouts/encabezado', $data);
-      $this->load->view('Ambiente/crear');
+      $this->load->view('usuario/crear');
       $this->load->view('layouts/piePagina');
     }
   }
@@ -113,6 +114,26 @@ class Ambiente extends CI_Controller
         $this->load->view('Ambiente/Eliminar', $data);
         $this->load->view('layouts/piePagina');
       }
+    }
+  }
+
+  public function TraerTiposDocumentos()
+  {
+    try {
+      echo json_encode($this->M_Usuario->TraerTiposDocumentos());
+      die();
+    } catch (\Throwable $th) {
+      echo $th;
+    }
+  }
+
+  public function TraerRoles()
+  {
+    try {
+      echo json_encode($this->M_Usuario->TraerRoles());
+      die();
+    } catch (\Throwable $th) {
+      echo $th;
     }
   }
 }
