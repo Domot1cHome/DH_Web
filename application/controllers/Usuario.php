@@ -91,7 +91,7 @@ class Usuario extends CI_Controller
 
   public function Eliminar($id = NULL)
   {
-    $data['page'] = ucfirst("Ambientes");
+    $data['page'] = ucfirst("Usuarios");
     if ($id == NULL or !is_numeric($id)) {
       echo "Error Falta ID";
       return;
@@ -101,17 +101,17 @@ class Usuario extends CI_Controller
     }
 
     if ($this->input->post()) {
-      $this->M_ambiente->Eliminar($id);
-      redirect('ambiente');
+      $this->M_Usuario->Eliminar($id);
+      redirect('usuario');
     } else {
 
-      $data['datos_ambiente'] = $this->M_ambiente->TraerPorId($id);
+      $data['datos_usuario'] = $this->M_Usuario->TraerPorId($id);
 
-      if (empty($data['datos_ambiente'])) {
+      if (empty($data['datos_usuario'])) {
         echo "El ID es Invalido";
       } else {
         $this->load->view('layouts/encabezado', $data);
-        $this->load->view('Ambiente/Eliminar', $data);
+        $this->load->view('usuario/eliminar', $data);
         $this->load->view('layouts/piePagina');
       }
     }

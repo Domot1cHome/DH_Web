@@ -30,9 +30,19 @@ class M_Usuario extends CI_Model
 
   function TraerPorId($id)
   {
-    $query = $this->db->select('amb_id,amb_nombre,amb_capacidad, fecha_creado,fecha_modificado');
-    $query = $this->db->where('amb_id', $id);
-    $query = $this->db->get('tb_ambiente');
+    $query = $this->db->select('usu_id,
+                                    usu_nombre,
+                                    usu_apellido,
+                                    usu_tip_doc_id,
+                                    usu_num_doc,
+                                    usu_rol_id,
+                                    usu_email,
+                                    usu_usuario,
+                                    usu_codigo,
+                                    fecha_creado,
+                                    fecha_modificado');
+    $query = $this->db->where('usu_id', $id);
+    $query = $this->db->get('tb_usuario');
     return $query->result();
   }
 
@@ -72,8 +82,7 @@ class M_Usuario extends CI_Model
 
   function Eliminar($id)
   {
-
-    $this->db->where('amb_id', $id);
-    $this->db->delete('tb_ambiente');
+    $this->db->where('usu_id', $id);
+    $this->db->delete('tb_usuario');
   }
 }
