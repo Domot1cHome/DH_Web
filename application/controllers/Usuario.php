@@ -24,11 +24,17 @@ class Usuario extends CI_Controller
 
   public function Crear()
   {
-    $data['page'] = ucfirst("Usuario");
+    $data['page'] = ucfirst("Usuarios");
     if ($this->input->post()) {
-      $this->form_validation->set_rules('usu_nombre', 'Nombres', 'required');
-      $this->form_validation->set_rules('usu_apellido', 'Apellidos', 'required');
-      $this->form_validation->set_rules('usu_num_doc', 'Número de documento', 'required|max_length[11]');
+      $this->form_validation->set_rules('usu_nombre', 'nombres', 'trim|required');
+      $this->form_validation->set_rules('usu_apellido', 'apellidos', 'trim|required');
+      $this->form_validation->set_rules('usu_tip_doc_id', 'tipo documento', 'trim|required');
+      $this->form_validation->set_rules('usu_num_doc', 'número de documento', 'trim|required|numeric|max_length[11]');
+      $this->form_validation->set_rules('usu_rol_id', 'rol', 'trim|required');
+      $this->form_validation->set_rules('usu_email', 'correo electrónico', 'trim|required|valid_email');
+      $this->form_validation->set_rules('usu_usuario', 'usuario', 'trim|required');
+      $this->form_validation->set_rules('usu_codigo', 'contraseña', 'trim|required|min_length[10]');
+      $this->form_validation->set_rules('usu_codigo_repeat', 'repetir contraseña', 'trim|required|min_length[10]|matches[usu_codigo]');
       if ($this->form_validation->run() == TRUE) {
         $this->M_Usuario->Crear();
         redirect('usuario');
@@ -46,7 +52,7 @@ class Usuario extends CI_Controller
 
   public function Editar($id = NULL)
   {
-    $data['page'] = ucfirst("Ambiente");
+    $data['page'] = ucfirst("Usuario");
     if ($id == NULL or !is_numeric($id)) {
       echo "Error Falta ID";
       return;
@@ -57,33 +63,40 @@ class Usuario extends CI_Controller
 
     //Si se envian los datos ahora falta validarlos
     if ($this->input->post()) {
-      $this->form_validation->set_rules('amb_nombre', 'Nombre ambiente', 'required');
-      $this->form_validation->set_rules('amb_capacidad', 'Cantidad de aprendices', 'required|max_length[2]');
+      $this->form_validation->set_rules('usu_nombre', 'nombres', 'trim|required');
+      $this->form_validation->set_rules('usu_apellido', 'apellidos', 'trim|required');
+      $this->form_validation->set_rules('usu_tip_doc_id', 'tipo documento', 'trim|required');
+      $this->form_validation->set_rules('usu_num_doc', 'número de documento', 'trim|required|numeric|max_length[11]');
+      $this->form_validation->set_rules('usu_rol_id', 'rol', 'trim|required');
+      $this->form_validation->set_rules('usu_email', 'correo electrónico', 'trim|required|valid_email');
+      $this->form_validation->set_rules('usu_usuario', 'usuario', 'trim|required');
+      $this->form_validation->set_rules('usu_codigo', 'contraseña', 'trim|required|min_length[10]');
+      $this->form_validation->set_rules('usu_codigo_repeat', 'repetir contraseña', 'trim|required|min_length[10]|matches[usu_codigo]');
       if ($this->form_validation->run() == TRUE) {
 
         $this->M_ambiente->Editar($id);
-        redirect('ambiente');
+        redirect('usuario');
       } else {
         //Verificamos que el id exista 
-        $data['ambiente'] = $this->M_ambiente->TraerPorId($id);
-        if (empty($data['ambiente'])) {
+        $data['usuario'] = $this->M_Usuario->TraerPorId($id);
+        if (empty($data['usuario'])) {
           echo "El ID es Invalido";
           return;
         } else {
           $this->load->view('layouts/encabezado', $data);
-          $this->load->view('Ambiente/editar', $data);
+          $this->load->view('usuario/editar', $data);
           $this->load->view('layouts/piePagina');
         }
       }
     } else {
       //Verificamos que el id exista 
-      $data['ambiente'] = $this->M_ambiente->TraerPorId($id);
-      if (empty($data['ambiente'])) {
+      $data['data_usuario'] = $this->M_Usuario->TraerPorId($id);
+      if (empty($data['data_usuario'])) {
         echo "El ID es Invalido";
         return;
       } else {
         $this->load->view('layouts/encabezado', $data);
-        $this->load->view('Ambiente/editar', $data);
+        $this->load->view('usuario/editar', $data);
         $this->load->view('layouts/piePagina');
       }
     }

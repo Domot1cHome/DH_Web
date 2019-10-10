@@ -9,43 +9,49 @@ $input_usu_nombre = array(
 $input_usu_apellido = array(
     'id'            => 'usu_apellido',
     'name'          => 'usu_apellido',
-    'value'            => set_value('usu_nombre'),
+    'value'            => set_value('usu_apellido'),
 );
 
-$input_usu_tip_doc_id = array(
+$dropdown_usu_tip_doc_id = array(
     'id'            => 'usu_tip_doc_id',
     'name'          => 'usu_tip_doc_id',
-    'value'            => set_value('usu_nombre'),
+    'value'            => set_value('usu_tip_doc_id'),
 );
 
 $input_usu_num_doc = array(
     'id'            => 'usu_num_doc',
     'name'          => 'usu_num_doc',
-    'value'            => set_value('usu_nombre'),
+    'value'            => set_value('usu_num_doc'),
 );
 
-$input_usu_rol_id = array(
+$dropdown_usu_rol_id = array(
     'id'            => 'usu_rol_id',
     'name'          => 'usu_rol_id',
-    'value'            => set_value('usu_nombre'),
+    'value'            => set_value('usu_rol_id'),
 );
 
 $input_usu_email = array(
     'id'            => 'usu_email',
     'name'          => 'usu_email',
-    'value'            => set_value('usu_nombre'),
+    'value'            => set_value('usu_email'),
 );
 
 $input_usu_usuario = array(
     'id'            => 'usu_usuario',
     'name'          => 'usu_usuario',
-    'value'            => set_value('usu_nombre'),
+    'value'            => set_value('usu_usuario'),
 );
 
 $input_usu_codigo = array(
     'id'            => 'usu_codigo',
     'name'          => 'usu_codigo',
-    'value'            => set_value('usu_nombre'),
+    'type'          => 'password',
+);
+
+$input_usu_codigo_repeat = array(
+    'id'            => 'usu_codigo_repeat',
+    'name'          => 'usu_codigo_repeat',
+    'type'          => 'password',
 );
 
 
@@ -80,10 +86,9 @@ $input_usu_codigo = array(
         <div class="form-group mb-3 col-21 col-sm-8 col-md-8 col-lg-4 col-xl-3">
             <div class="input-group-prepend">
                 <b><?php echo form_label('Seleccione el tipo de documento:', '', 'class="text-secondary"'); ?></b>
-            </div>
-            <select id="tipoDocumentoSelector" name="documentoSelector">
-            </select>
-            <?php echo form_error('usu_num_doc'); ?>
+            </div>        
+            <?php echo form_dropdown($dropdown_usu_tip_doc_id); ?>
+            <?php echo form_error('usu_tip_doc_id'); ?>
         </div>
 
         <div class="form-group mb-3 col-21 col-sm-8 col-md-8 col-lg-4 col-xl-3">
@@ -97,10 +102,9 @@ $input_usu_codigo = array(
 
         <div class="form-group mb-3 col-21 col-sm-8 col-md-8 col-lg-4 col-xl-3">
             <div class="input-group-prepend">
-                <b><?php echo form_label('Seleccione el rol:', '', 'class="text-secondary"'); ?></b>
-            </div>
-            <select id="rolSelector" name="rolSelector">
-            </select>
+                <b><?php echo form_label('Seleccione el rol:','', 'class="text-secondary"'); ?></b>
+            </div>            
+            <?php echo form_dropdown($dropdown_usu_rol_id); ?>
             <?php echo form_error('usu_rol_id'); ?>
         </div>
 
@@ -122,10 +126,18 @@ $input_usu_codigo = array(
 
         <div class="form-group mb-3 col-21 col-sm-8 col-md-8 col-lg-4 col-xl-3">
             <div class="input-group-prepend">
-                <b><?php echo form_label('Codigo:', '', 'class="text-secondary"'); ?></b>
+                <b><?php echo form_label('Contraseña:', '', 'class="text-secondary"'); ?></b>
             </div>
             <?php echo form_input($input_usu_codigo, '', "class='form-control'"); ?>
             <?php echo form_error('usu_codigo'); ?>
+        </div>
+
+        <div class="form-group mb-3 col-21 col-sm-8 col-md-8 col-lg-4 col-xl-3">
+            <div class="input-group-prepend">
+                <b><?php echo form_label('Repetir contraseña:', '', 'class="text-secondary"'); ?></b>
+            </div>
+            <?php echo form_input($input_usu_codigo_repeat, '', "class='form-control'"); ?>
+            <?php echo form_error('usu_codigo_repeat'); ?>
         </div>
 
 
@@ -148,9 +160,9 @@ $input_usu_codigo = array(
             "<?php echo base_url() ?>" + "index.php/usuario/traertiposdocumentos"
         ).done(function(data) {
             var opts = $.parseJSON(data);
-            $('#tipoDocumentoSelector').append('<option value="">Seleccionar...</option>');
+            $('#usu_tip_doc_id').append('<option value="" disabled selected>Seleccionar...</option>');
             $.each(opts, function(i, d) {
-                $('#tipoDocumentoSelector').append('<option value="' + d.tip_doc_id + '">' + d.tip_doc_nombre + '</option>');
+                $('#usu_tip_doc_id').append('<option value="' + d.tip_doc_id + '">' + d.tip_doc_nombre + '</option>');
             });
 
         }).fail(function(jqXHR) {
@@ -164,9 +176,9 @@ $input_usu_codigo = array(
             "<?php echo base_url() ?>" + "index.php/usuario/traerroles"
         ).done(function(data) {
             var opts = $.parseJSON(data);
-            $('#rolSelector').append('<option value="">Seleccionar...</option>');
+            $('#usu_rol_id').append('<option value="" disabled selected>Seleccionar...</option>');
             $.each(opts, function(i, d) {
-                $('#rolSelector').append('<option value="' + d.rol_id + '">' + d.rol_nombre + '</option>');
+                $('#usu_rol_id').append('<option value="' + d.rol_id + '">' + d.rol_nombre + '</option>');
             });
 
         }).fail(function(jqXHR) {
