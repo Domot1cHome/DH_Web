@@ -69,15 +69,10 @@ class Usuario extends CI_Controller
       $this->form_validation->set_rules('usu_num_doc', 'número de documento', 'trim|required|numeric|max_length[11]');
       $this->form_validation->set_rules('usu_rol_id', 'rol', 'trim|required');
       $this->form_validation->set_rules('usu_email', 'correo electrónico', 'trim|required|valid_email');
-      $this->form_validation->set_rules('usu_usuario', 'usuario', 'trim|required');
-      $this->form_validation->set_rules('usu_codigo', 'contraseña', 'trim|required|min_length[10]');
-      $this->form_validation->set_rules('usu_codigo_repeat', 'repetir contraseña', 'trim|required|min_length[10]|matches[usu_codigo]');
       if ($this->form_validation->run() == TRUE) {
-
-        $this->M_ambiente->Editar($id);
+        $this->M_Usuario->Editar($id);
         redirect('usuario');
       } else {
-        //Verificamos que el id exista 
         $data['usuario'] = $this->M_Usuario->TraerPorId($id);
         if (empty($data['usuario'])) {
           echo "El ID es Invalido";
@@ -89,7 +84,6 @@ class Usuario extends CI_Controller
         }
       }
     } else {
-      //Verificamos que el id exista 
       $data['data_usuario'] = $this->M_Usuario->TraerPorId($id);
       if (empty($data['data_usuario'])) {
         echo "El ID es Invalido";
@@ -117,9 +111,7 @@ class Usuario extends CI_Controller
       $this->M_Usuario->Eliminar($id);
       redirect('usuario');
     } else {
-
       $data['datos_usuario'] = $this->M_Usuario->TraerPorId($id);
-
       if (empty($data['datos_usuario'])) {
         echo "El ID es Invalido";
       } else {
@@ -149,4 +141,7 @@ class Usuario extends CI_Controller
       echo $th;
     }
   }
+
+  public function Reestablecer()
+  { }
 }

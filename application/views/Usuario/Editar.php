@@ -33,7 +33,7 @@ $dropdown_usu_rol_id = array(
 $dropdown_usu_tip_doc_id = array(
     'id'            => 'usu_tip_doc_id',
     'name'          => 'usu_tip_doc_id',
-    'value'         => set_value('usu_tip_doc_id', @$data_usuario[0]->usu_tip_doc_id)
+    // 'value'         => set_value('usu_tip_doc_id', @$data_usuario[0]->usu_tip_doc_id)
 );
 
 $input_usu_email = array(
@@ -42,11 +42,11 @@ $input_usu_email = array(
     'value'         => set_value('usu_email', @$data_usuario[0]->usu_email)
 );
 
-$input_usu_usuario = array(
-    'id'            => 'usu_usuario',
-    'name'          => 'usu_usuario',
-    'value'         => set_value('usu_usuario', @$data_usuario[0]->usu_usuario)
-);
+// $input_usu_usuario = array(
+//     'id'            => 'usu_usuario',
+//     'name'          => 'usu_usuario',
+//     'value'         => set_value('usu_usuario', @$data_usuario[0]->usu_usuario)
+// );
 
 // $input_usu_codigo = array(
 //     'id'            => 'usu_codigo',
@@ -62,74 +62,91 @@ $input_usu_usuario = array(
 
 ?>
 
-<div class="card mb-3">
+<?php
 
-    <div class="card-header">
-        <i class="far fa-edit"></i> <span class="text-secondary">Editar <?php echo $page; ?></span>
-    </div>
+$checker1 = 'unchecked';
+$checker2 = 'unchecked';
 
-    <div class="card-body">
+switch (@$data_usuario[0]->usu_rol_id) {
+    case '1':
+        $checker1 = 'selected';
+        break;
+    case '2':
+        $checker2 = 'selected';
+        break;
+}
 
-        <?php echo form_open(); ?><br>
+?>
 
-        <div class="form-group mb-3 col-21 col-sm-8 col-md-8 col-lg-4 col-xl-3">
-            <div class="input-group-prepend">
-                <b><?php echo form_label('Nombres:', '', 'class="text-secondary"'); ?></b>
-            </div>
-            <?php echo form_input($input_usu_nombre, '', "class='form-control'"); ?>
-            <?php echo form_error('usu_nombre'); ?>
+
+    <div class="card mb-3">
+
+        <div class="card-header">
+            <i class="far fa-edit"></i> <span class="text-secondary">Editar <?php echo $page; ?></span>
         </div>
 
-        <div class="form-group mb-3 col-21 col-sm-8 col-md-8 col-lg-4 col-xl-3">
-            <div class="input-group-prepend">
-                <b><?php echo form_label('Apellidos:', '', 'class="text-secondary"'); ?></b>
+        <div class="card-body">
+
+            <?php echo form_open(); ?><br>
+
+            <div class="form-group mb-3 col-21 col-sm-8 col-md-8 col-lg-4 col-xl-3">
+                <div class="input-group-prepend">
+                    <b><?php echo form_label('Nombres:', '', 'class="text-secondary"'); ?></b>
+                </div>
+                <?php echo form_input($input_usu_nombre, '', "class='form-control'"); ?>
+                <?php echo form_error('usu_nombre'); ?>
             </div>
-            <?php echo form_input($input_usu_apellido, '', "class='form-control'"); ?>
-            <?php echo form_error('usu_apellido'); ?>
-        </div>
 
-        <div class="form-group mb-3 col-21 col-sm-8 col-md-8 col-lg-4 col-xl-3">
-            <div class="input-group-prepend">
-                <b><?php echo form_label('Seleccione el tipo de documento:', '', 'class="text-secondary"'); ?></b>
+            <div class="form-group mb-3 col-21 col-sm-8 col-md-8 col-lg-4 col-xl-3">
+                <div class="input-group-prepend">
+                    <b><?php echo form_label('Apellidos:', '', 'class="text-secondary"'); ?></b>
+                </div>
+                <?php echo form_input($input_usu_apellido, '', "class='form-control'"); ?>
+                <?php echo form_error('usu_apellido'); ?>
             </div>
-            <?php echo form_dropdown($dropdown_usu_tip_doc_id); ?>
-            <?php echo form_error('usu_tip_doc_id'); ?>
-        </div>
 
-        <div class="form-group mb-3 col-21 col-sm-8 col-md-8 col-lg-4 col-xl-3">
-            <div class="input-group-prepend">
-                <b><?php echo form_label('Número de documento:', '', 'class="text-secondary"'); ?></b>
+            <div class="form-group mb-3 col-21 col-sm-8 col-md-8 col-lg-4 col-xl-3">
+                <div class="input-group-prepend">
+                    <b><?php echo form_label('Seleccione el tipo de documento:', '', 'class="text-secondary"'); ?></b>
+                </div>
+                <?php echo form_dropdown($dropdown_usu_tip_doc_id); ?>
+                <?php echo form_error('usu_tip_doc_id'); ?>
             </div>
-            <?php echo form_input($input_usu_num_doc, '', "class='form-control'"); ?>
-            <?php echo form_error('usu_num_doc'); ?>
-        </div>
 
-
-        <div class="form-group mb-3 col-21 col-sm-8 col-md-8 col-lg-4 col-xl-3">
-            <div class="input-group-prepend">
-                <b><?php echo form_label('Seleccione el rol:', '', 'class="text-secondary"'); ?></b>
+            <div class="form-group mb-3 col-21 col-sm-8 col-md-8 col-lg-4 col-xl-3">
+                <div class="input-group-prepend">
+                    <b><?php echo form_label('Número de documento:', '', 'class="text-secondary"'); ?></b>
+                </div>
+                <?php echo form_input($input_usu_num_doc, '', "class='form-control'"); ?>
+                <?php echo form_error('usu_num_doc'); ?>
             </div>
-            <?php echo form_dropdown($dropdown_usu_rol_id); ?>
-            <?php echo form_error('usu_rol_id'); ?>
-        </div>
 
-        <div class="form-group mb-3 col-21 col-sm-8 col-md-8 col-lg-4 col-xl-3">
-            <div class="input-group-prepend">
-                <b><?php echo form_label('Correo electrónico:', '', 'class="text-secondary"'); ?></b>
+
+            <div class="form-group mb-3 col-21 col-sm-8 col-md-8 col-lg-4 col-xl-3">
+                <div class="input-group-prepend">
+                    <b><?php echo form_label('Seleccione el rol:', '', 'class="text-secondary"'); ?></b>
+                </div>
+                <?php echo form_dropdown($dropdown_usu_rol_id); ?>
+                <?php echo form_error('usu_rol_id'); ?>
             </div>
-            <?php echo form_input($input_usu_email, '', "class='form-control'"); ?>
-            <?php echo form_error('usu_email'); ?>
-        </div>
 
-        <div class="form-group mb-3 col-21 col-sm-8 col-md-8 col-lg-4 col-xl-3">
-            <div class="input-group-prepend">
-                <b><?php echo form_label('Usuario:', '', 'class="text-secondary"'); ?></b>
+            <div class="form-group mb-3 col-21 col-sm-8 col-md-8 col-lg-4 col-xl-3">
+                <div class="input-group-prepend">
+                    <b><?php echo form_label('Correo electrónico:', '', 'class="text-secondary"'); ?></b>
+                </div>
+                <?php echo form_input($input_usu_email, '', "class='form-control'"); ?>
+                <?php echo form_error('usu_email'); ?>
             </div>
-            <?php echo form_input($input_usu_usuario, '', "class='form-control'"); ?>
-            <?php echo form_error('usu_usuario'); ?>
-        </div>
 
-        <!-- <div class="form-group mb-3 col-21 col-sm-8 col-md-8 col-lg-4 col-xl-3">
+            <!-- <div class="form-group mb-3 col-21 col-sm-8 col-md-8 col-lg-4 col-xl-3">
+                <div class="input-group-prepend">
+                    <b><?php echo form_label('Usuario:', '', 'class="text-secondary"'); ?></b>
+                </div>
+                <?php echo form_input($input_usu_usuario, '', "class='form-control'"); ?>
+                <?php echo form_error('usu_usuario'); ?>
+            </div> -->
+
+            <!-- <div class="form-group mb-3 col-21 col-sm-8 col-md-8 col-lg-4 col-xl-3">
             <div class="input-group-prepend">
                 <b><?php echo form_label('Contraseña:', '', 'class="text-secondary"'); ?></b>
             </div>
@@ -147,67 +164,61 @@ $input_usu_usuario = array(
 
 
 
-        <div class="form-group mb-2 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-            <?php echo form_submit('btn_guardar', 'Guardar', "class='btn btn-primary btn-sm' style='margin-bottom: 15px;' "); ?>
-            <a href="<?php echo base_url() ?>index.php/usuario" class="btn btn-link " style='margin-bottom: 15px;'>| o Cancelar</a>
+            <div class="form-group mb-2 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                <?php echo form_submit('btn_guardar', 'Guardar', "class='btn btn-primary btn-sm' style='margin-bottom: 15px;' "); ?>
+                <a href="<?php echo base_url() ?>index.php/usuario" class="btn btn-link " style='margin-bottom: 15px;'>| o Cancelar</a>
+            </div>
+
+            <?php echo form_close(); ?>
+
         </div>
 
-        <?php echo form_close(); ?>
 
     </div>
 
+    <script>
+        function LlenarSelectorTipoDocumentos() {
 
-</div>
-
-<script>
-    function LlenarSelectorTipoDocumentos() {
-
-        $.ajax(
-            "<?php echo base_url() ?>" + "index.php/usuario/traertiposdocumentos"
-        ).done(function(data) {
-            var opts = $.parseJSON(data);
-            $('#usu_tip_doc_id').append('<option value="" disabled selected>Seleccionar...</option>');
-            $.each(opts, function(i, d) {
-                $('#usu_tip_doc_id').append('<option value="' + d.tip_doc_id + '">' + d.tip_doc_nombre + '</option>');
+            $.ajax(
+                "<?php echo base_url() ?>" + "index.php/usuario/traertiposdocumentos"
+            ).done(function(data) {
+                var opts = $.parseJSON(data);
+                $.each(opts, function(i, d) {
+                    var foo = '';
+                    if (d.tip_doc_id == <?php echo @$data_usuario[0]->usu_tip_doc_id ?>) {
+                        foo = 'selected';
+                    }
+                    $('#usu_tip_doc_id').append('<option value="' + d.tip_doc_id + '"' + foo + ' >' + d.tip_doc_nombre + '</option>');
+                });
+            }).fail(function(jqXHR) {
+                alert(jqXHR.statusText);
             });
+        }
 
-        }).fail(function(jqXHR) {
-            alert(jqXHR.statusText);
-        });
-    }
-
-    function LlenarSelectorRoles() {
-
-        $.ajax(
-            "<?php echo base_url() ?>" + "index.php/usuario/traerroles"
-        ).done(function(data) {
-            var opts = $.parseJSON(data);
-
-
-
-
-            $('#usu_rol_id').append('<option value="" disabled selected>Seleccionar...</option>');
-            $.each(opts, function(i, d) {
-
-                // if (d.rol_id == 2) {
-                //     console.log(d.rol_id);
-                //     $('#usu_rol_id').append('<option value="' + d.rol_id + '">' + d.rol_nombre + '</option>');
-                //     document.getElementById("usu_rol_id").selected=true;
-                // }
-
-                console.log('Truno');
-
-                
-
+        function LlenarSelectorRoles() {
+            $.ajax(
+                "<?php echo base_url() ?>" + "index.php/usuario/traerroles"
+            ).done(function(data) {
+                var opts = $.parseJSON(data);
+                $.each(opts, function(i, d) {
+                    var foo = '';
+                    if (d.rol_id == <?php echo @$data_usuario[0]->usu_rol_id ?>) {
+                        foo = 'selected';
+                    }
+                    $('#usu_rol_id').append('<option value="' + d.rol_id + '"' + foo + ' >' + d.rol_nombre + '</option>');
+                });
+            }).fail(function(jqXHR) {
+                alert(jqXHR.statusText);
             });
+        }
 
-        }).fail(function(jqXHR) {
-            alert(jqXHR.statusText);
+        $(document).ready(function() {
+            LlenarSelectorTipoDocumentos();
+            LlenarSelectorRoles();
         });
-    }
 
-    $(document).ready(function() {
-        LlenarSelectorTipoDocumentos();
-        LlenarSelectorRoles();
-    });
-</script>
+        // $(window).load(function () {
+        //     LlenarSelectorTipoDocumentos();
+        //     LlenarSelectorRoles();
+        // }
+    </script>

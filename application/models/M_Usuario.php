@@ -49,7 +49,7 @@ class M_Usuario extends CI_Model
   function TraerTiposDocumentos()
   {
     $query = $this->db->select('tip_doc_id, tip_doc_nombre');
-    $query = $this->db->get('tb_tipo_documento');    
+    $query = $this->db->get('tb_tipo_documento');
     return $query->result();
   }
 
@@ -63,7 +63,6 @@ class M_Usuario extends CI_Model
 
   function Crear()
   {
-
     $data_insertar = $this->input->post();
     unset($data_insertar['btn_guardar']);
     unset($data_insertar['usu_codigo_repeat']);
@@ -75,12 +74,11 @@ class M_Usuario extends CI_Model
 
   function Editar($id)
   {
-
     $data_editar = $this->input->post();
     unset($data_editar['btn_guardar']);
     $data_editar['fecha_modificado'] = date("Y-m-d H:i:s");
-    $this->db->where('amb_id', $id);
-    $this->db->update('tb_ambiente', $data_editar);
+    $this->db->where('usu_id', $id);
+    $this->db->update('tb_usuario', $data_editar);
   }
 
   function Eliminar($id)

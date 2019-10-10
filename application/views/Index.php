@@ -41,21 +41,19 @@ $submit_Login = array(
                 </span>
 
                 <div class="wrap-input100 validate-input m-b-16" data-validate="Digite el usuario">
-
                     <?php echo form_input($input_Usuario) ?>
                 </div>
 
                 <div class="wrap-input100 validate-input" data-validate="Digite la contraseña">
-
                     <?php echo form_input($input_Codigo) ?>
                 </div>
 
                 <div class="container-login100-form-btn">
-
                     <?php echo form_submit($submit_Login) ?>
                 </div>
-
+                
                 <?php echo form_close() ?>
+                
 
             </div>
         </div>
