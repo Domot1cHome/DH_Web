@@ -19,6 +19,7 @@ class Usuario extends CI_Controller
     $data['usuario'] = $this->M_Usuario->TraerTodos();
     $this->load->view('layouts/encabezado', $data);
     $this->load->view('layouts/barraLateral');
+    $this->load->view('layouts/navegador');
     $this->load->view('usuario/index', $data);
     $this->load->view('layouts/piePagina');
   }
@@ -42,12 +43,14 @@ class Usuario extends CI_Controller
       } else {
         $this->load->view('layouts/encabezado', $data);
         $this->load->view('layouts/barraLateral');
+        $this->load->view('layouts/navegador');
         $this->load->view('usuario/crear');
         $this->load->view('layouts/piePagina');
       }
     } else {
       $this->load->view('layouts/encabezado', $data);
       $this->load->view('layouts/barraLateral');
+      $this->load->view('layouts/navegador');
       $this->load->view('usuario/crear');
       $this->load->view('layouts/piePagina');
     }
@@ -83,6 +86,7 @@ class Usuario extends CI_Controller
         } else {
           $this->load->view('layouts/encabezado', $data);
           $this->load->view('layouts/barraLateral');
+          $this->load->view('layouts/navegador');
           $this->load->view('usuario/editar', $data);
           $this->load->view('layouts/piePagina');
         }
@@ -95,6 +99,7 @@ class Usuario extends CI_Controller
       } else {
         $this->load->view('layouts/encabezado', $data);
         $this->load->view('layouts/barraLateral');
+        $this->load->view('layouts/navegador');
         $this->load->view('usuario/editar', $data);
         $this->load->view('layouts/piePagina');
       }
@@ -122,6 +127,7 @@ class Usuario extends CI_Controller
       } else {
         $this->load->view('layouts/encabezado', $data);
         $this->load->view('layouts/barraLateral');
+        $this->load->view('layouts/navegador');
         $this->load->view('usuario/eliminar', $data);
         $this->load->view('layouts/piePagina');
       }
@@ -149,6 +155,7 @@ class Usuario extends CI_Controller
         $data['page'] = ucfirst("Contraseña");
         $this->load->view('layouts/encabezado', $data);
         $this->load->view('layouts/barraLateral');
+        $this->load->view('layouts/navegador');
         $this->load->view('usuario/Reestablecer', $data);
         $this->load->view('layouts/piePagina');
       }
@@ -156,6 +163,7 @@ class Usuario extends CI_Controller
       $data['page'] = ucfirst("Contraseña");
       $this->load->view('layouts/encabezado', $data);
       $this->load->view('layouts/barraLateral');
+      $this->load->view('layouts/navegador');
       $this->load->view('usuario/Reestablecer', $data);
       $this->load->view('layouts/piePagina');
     }
