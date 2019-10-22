@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="<?php echo base_url(); ?>css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/estilos/estilo_Index.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/estilos/estilo_Login.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/util.css">
 
 
@@ -27,7 +27,7 @@
 <body>
 
     <nav class="navbar navbar-secundary bg-light">
-        <a class="navbar-brand" href="<?php echo base_url() ?>Controlador/Prueba11">
+        <a class="navbar-brand">
             <img src="https://raw.githubusercontent.com/alemupx/DomoticHomeFiles/master/Logotipos/logo-3.png" width="30" height="30" class="d-inline-block align-top" alt="">
             Domotic Home
         </a>

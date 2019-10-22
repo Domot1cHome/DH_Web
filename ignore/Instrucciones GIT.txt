@@ -1,0 +1,26 @@
+#1. Procurar estar en el repositorio actual revisando las direcciones URL. 
+    Ejecuta el comando: $ git config --get remote.origin.url 
+    Deberia traer esta url: https://github.com/Domot1cHome/DH_Web.git
+    De lo contrario clona de nuevo el repositorio. 
+
+#2. Una vez hecho este paso refresca la ramas remotas a nivel local
+    Ejecuta el comando: $ git fetch origin
+    Para enlistar todas las ramas:  $ git branch -a
+
+    master
+    remotes/origin/Lucho
+    remotes/origin/carlos
+    remotes/origin/desarrollo
+    remotes/origin/luis
+    remotes/origin/master
+
+    Para revisar dentro de una rama: $git checkout origin/luis
+
+#3. Fusión de ramas. 
+    Ejemplo fusion rama carlos con rama luis.
+    Si no tienes la rama carlos a nivel local: $ git checkout -b carlos
+    Ahora estas parado en la rama carlos, lo siguiente sera traer los cambios hechos remotamente en la rama; para ello: $ git pull
+    Si llegaste a este paso es por que estas listo para fusionar la rama luis: $ git merge origin/luis
+    Una vez se transfiera los cambios estas listo para empezar a aplicar tus cambios. 
+
+
