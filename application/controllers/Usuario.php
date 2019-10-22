@@ -18,6 +18,7 @@ class Usuario extends CI_Controller
     $data['page'] = ucfirst("Usuarios");
     $data['usuario'] = $this->M_Usuario->TraerTodos();
     $this->load->view('layouts/encabezado', $data);
+    $this->load->view('layouts/barraLateral');
     $this->load->view('usuario/index', $data);
     $this->load->view('layouts/piePagina');
   }
@@ -40,11 +41,13 @@ class Usuario extends CI_Controller
         redirect('usuario');
       } else {
         $this->load->view('layouts/encabezado', $data);
+        $this->load->view('layouts/barraLateral');
         $this->load->view('usuario/crear');
         $this->load->view('layouts/piePagina');
       }
     } else {
       $this->load->view('layouts/encabezado', $data);
+      $this->load->view('layouts/barraLateral');
       $this->load->view('usuario/crear');
       $this->load->view('layouts/piePagina');
     }
@@ -79,6 +82,7 @@ class Usuario extends CI_Controller
           return;
         } else {
           $this->load->view('layouts/encabezado', $data);
+          $this->load->view('layouts/barraLateral');
           $this->load->view('usuario/editar', $data);
           $this->load->view('layouts/piePagina');
         }
@@ -90,6 +94,7 @@ class Usuario extends CI_Controller
         return;
       } else {
         $this->load->view('layouts/encabezado', $data);
+        $this->load->view('layouts/barraLateral');
         $this->load->view('usuario/editar', $data);
         $this->load->view('layouts/piePagina');
       }
@@ -116,9 +121,43 @@ class Usuario extends CI_Controller
         echo "El ID es Invalido";
       } else {
         $this->load->view('layouts/encabezado', $data);
+        $this->load->view('layouts/barraLateral');
         $this->load->view('usuario/eliminar', $data);
         $this->load->view('layouts/piePagina');
       }
+    }
+  }
+
+  public function Reestablecer($id)
+  {
+
+    if ($id == NULL or !is_numeric($id)) {
+      echo "Error Falta ID";
+      return;
+    } else if ($id == 1) {
+      echo "Error. No se puede editar este ID";
+      return;
+    }
+
+    if ($this->input->post()) {
+      $this->form_validation->set_rules('usu_codigo', 'contraseña', 'trim|required|min_length[10]');
+      $this->form_validation->set_rules('usu_codigo_repeat', 'repetir contraseña', 'trim|required|min_length[10]|matches[usu_codigo]');
+      if ($this->form_validation->run() == TRUE) {
+        $this->M_Usuario->Reestablecer($id);
+        redirect('usuario');
+      } else {
+        $data['page'] = ucfirst("Contraseña");
+        $this->load->view('layouts/encabezado', $data);
+        $this->load->view('layouts/barraLateral');
+        $this->load->view('usuario/Reestablecer', $data);
+        $this->load->view('layouts/piePagina');
+      }
+    } else {
+      $data['page'] = ucfirst("Contraseña");
+      $this->load->view('layouts/encabezado', $data);
+      $this->load->view('layouts/barraLateral');
+      $this->load->view('usuario/Reestablecer', $data);
+      $this->load->view('layouts/piePagina');
     }
   }
 
@@ -141,7 +180,4 @@ class Usuario extends CI_Controller
       echo $th;
     }
   }
-
-  public function Reestablecer()
-  { }
 }

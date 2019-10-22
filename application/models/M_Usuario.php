@@ -86,4 +86,14 @@ class M_Usuario extends CI_Model
     $this->db->where('usu_id', $id);
     $this->db->delete('tb_usuario');
   }
+
+  function Reestablecer($id)
+  {
+    $data_editar = $this->input->post();
+    unset($data_editar['btn_guardar']);
+    $data_editar['fecha_modificado'] = date("Y-m-d H:i:s");
+    print_r($data_editar);
+    // $this->db->where('usu_id', $id);
+    // $this->db->update('tb_usuario', $data_editar);
+  }
 }

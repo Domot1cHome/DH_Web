@@ -19,6 +19,9 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
 
+    <link href="<?php echo base_url(); ?>css/simple-sidebar.css" rel="stylesheet">
+    
+
 
 </head>
 
@@ -29,11 +32,11 @@
     <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
     <script src="<?php echo base_url(); ?>js/main.js"></script>
 
-    <nav class="navbar navbar-secundary bg-light">
+    <!-- <nav class="navbar navbar-secundary bg-light">
         <a class="navbar-brand" href="<?php echo base_url() ?>index.php/ambiente">
             <?php echo $page; ?>
         </a>
-
         <a href="<?php echo base_url() ?>" class="btn btn-outline-danger my-2 my-sm-0">Cerrar sesión</a>
+    </nav> -->
 
-    </nav>
+    <div class="d-flex" id="wrapper">

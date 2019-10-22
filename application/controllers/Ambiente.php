@@ -18,6 +18,7 @@ class Ambiente extends CI_Controller
     $data['page'] = ucfirst("Ambientes");
     $data['ambiente'] = $this->M_ambiente->TraerTodos();
     $this->load->view('layouts/encabezado', $data);
+    $this->load->view('layouts/barraLateral');
     $this->load->view('ambiente/index', $data);
     $this->load->view('layouts/piePagina');
   }
@@ -33,11 +34,13 @@ class Ambiente extends CI_Controller
         redirect('ambiente');
       } else {
         $this->load->view('layouts/encabezado', $data);
+        $this->load->view('layouts/barraLateral');
         $this->load->view('Ambiente/crear');
         $this->load->view('layouts/piePagina');
       }
     } else {
       $this->load->view('layouts/encabezado', $data);
+      $this->load->view('layouts/barraLateral');
       $this->load->view('Ambiente/crear');
       $this->load->view('layouts/piePagina');
     }
@@ -70,6 +73,7 @@ class Ambiente extends CI_Controller
           return;
         } else {
           $this->load->view('layouts/encabezado', $data);
+          $this->load->view('layouts/barraLateral');
           $this->load->view('Ambiente/editar', $data);
           $this->load->view('layouts/piePagina');
         }
@@ -82,6 +86,7 @@ class Ambiente extends CI_Controller
         return;
       } else {
         $this->load->view('layouts/encabezado', $data);
+        $this->load->view('layouts/barraLateral');
         $this->load->view('Ambiente/editar', $data);
         $this->load->view('layouts/piePagina');
       }
@@ -110,6 +115,7 @@ class Ambiente extends CI_Controller
         echo "El ID es Invalido";
       } else {
         $this->load->view('layouts/encabezado', $data);
+        $this->load->view('layouts/barraLateral');
         $this->load->view('Ambiente/Eliminar', $data);
         $this->load->view('layouts/piePagina');
       }

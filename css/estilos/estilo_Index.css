@@ -44,16 +44,6 @@ body, html {
 
 /*---------------------------------------------*/
 
-
-a:focus {
-    outline: none !important;
-}
-
-a:hover {
-    text-decoration: none;
-    color: #1b3815;
-}
-
 /*---------------------------------------------*/
 
 h1, h2, h3, h4, h5, h6 {

@@ -15,15 +15,17 @@ $input_amb_capacidad = array(
 
 
 ?>
-<div class="card mb-3">
 
-    <div class="card-header">
-        <i class="far fa-edit"></i> <span class="text-secondary">Editar <?php echo $page; ?></span>
-    </div>
+<div id="page-content-wrapper">
+    <div class="card mb-3">
 
-    <div class="card-body">
+        <div class="card-header">
+            <i class="far fa-edit"></i> <span class="text-secondary">Editar <?php echo $page; ?></span>
+        </div>
 
-        <?php echo form_open(); ?> <br>
+        <div class="card-body">
+
+            <?php echo form_open(); ?> <br>
 
             <div class="form-group mb-3 col-21 col-sm-8 col-md-8 col-lg-4 col-xl-3">
                 <div class="input-group-prepend">
@@ -52,8 +54,9 @@ $input_amb_capacidad = array(
                 <a href="<?php echo base_url() ?>index.php/ambiente" class="btn btn-link " style='margin-bottom: 15px;'>| o Cancelar</a>
             </div>
 
-        <?php echo form_close(); ?>
-        
-    </div>
+            <?php echo form_close(); ?>
 
+        </div>
+
+    </div>
 </div>
