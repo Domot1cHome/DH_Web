@@ -91,9 +91,9 @@ class M_Usuario extends CI_Model
   {
     $data_editar = $this->input->post();
     unset($data_editar['btn_guardar']);
+    unset($data_editar['usu_codigo_repeat']);
     $data_editar['fecha_modificado'] = date("Y-m-d H:i:s");
-    print_r($data_editar);
-    // $this->db->where('usu_id', $id);
-    // $this->db->update('tb_usuario', $data_editar);
+    $this->db->where('usu_id', $id);
+    $this->db->update('tb_usuario', $data_editar);
   }
 }
