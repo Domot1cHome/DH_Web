@@ -19,6 +19,7 @@ class Usuario extends CI_Controller
     $data['usuario'] = $this->M_Usuario->TraerTodos();
     $this->load->view('layouts/encabezado', $data);
     $this->load->view('layouts/barraLateral');
+    $this->load->view('layouts/navegador');
     $this->load->view('usuario/index', $data);
     $this->load->view('layouts/piePagina');
   }
@@ -34,20 +35,22 @@ class Usuario extends CI_Controller
       $this->form_validation->set_rules('usu_rol_id', 'rol', 'trim|required');
       $this->form_validation->set_rules('usu_email', 'correo electrónico', 'trim|required|valid_email');
       $this->form_validation->set_rules('usu_usuario', 'usuario', 'trim|required');
-      $this->form_validation->set_rules('usu_codigo', 'contraseña', 'trim|required|min_length[10]');
-      $this->form_validation->set_rules('usu_codigo_repeat', 'repetir contraseña', 'trim|required|min_length[10]|matches[usu_codigo]');
+      $this->form_validation->set_rules('usu_codigo', 'contraseña', 'trim|required|min_length[8]');
+      $this->form_validation->set_rules('usu_codigo_repeat', 'repetir contraseña', 'trim|required|min_length[8]|matches[usu_codigo]');
       if ($this->form_validation->run() == TRUE) {
         $this->M_Usuario->Crear();
         redirect('usuario');
       } else {
         $this->load->view('layouts/encabezado', $data);
         $this->load->view('layouts/barraLateral');
+        $this->load->view('layouts/navegador');
         $this->load->view('usuario/crear');
         $this->load->view('layouts/piePagina');
       }
     } else {
       $this->load->view('layouts/encabezado', $data);
       $this->load->view('layouts/barraLateral');
+      $this->load->view('layouts/navegador');
       $this->load->view('usuario/crear');
       $this->load->view('layouts/piePagina');
     }
@@ -83,6 +86,7 @@ class Usuario extends CI_Controller
         } else {
           $this->load->view('layouts/encabezado', $data);
           $this->load->view('layouts/barraLateral');
+          $this->load->view('layouts/navegador');
           $this->load->view('usuario/editar', $data);
           $this->load->view('layouts/piePagina');
         }
@@ -95,6 +99,7 @@ class Usuario extends CI_Controller
       } else {
         $this->load->view('layouts/encabezado', $data);
         $this->load->view('layouts/barraLateral');
+        $this->load->view('layouts/navegador');
         $this->load->view('usuario/editar', $data);
         $this->load->view('layouts/piePagina');
       }
@@ -122,6 +127,7 @@ class Usuario extends CI_Controller
       } else {
         $this->load->view('layouts/encabezado', $data);
         $this->load->view('layouts/barraLateral');
+        $this->load->view('layouts/navegador');
         $this->load->view('usuario/eliminar', $data);
         $this->load->view('layouts/piePagina');
       }
@@ -140,8 +146,8 @@ class Usuario extends CI_Controller
     }
 
     if ($this->input->post()) {
-      $this->form_validation->set_rules('usu_codigo', 'contraseña', 'trim|required|min_length[10]');
-      $this->form_validation->set_rules('usu_codigo_repeat', 'repetir contraseña', 'trim|required|min_length[10]|matches[usu_codigo]');
+      $this->form_validation->set_rules('usu_codigo', 'contraseña', 'trim|required|min_length[8]');
+      $this->form_validation->set_rules('usu_codigo_repeat', 'repetir contraseña', 'trim|required|min_length[8]|matches[usu_codigo]');
       if ($this->form_validation->run() == TRUE) {
         $this->M_Usuario->Reestablecer($id);
         redirect('usuario');
@@ -149,6 +155,7 @@ class Usuario extends CI_Controller
         $data['page'] = ucfirst("Contraseña");
         $this->load->view('layouts/encabezado', $data);
         $this->load->view('layouts/barraLateral');
+        $this->load->view('layouts/navegador');
         $this->load->view('usuario/Reestablecer', $data);
         $this->load->view('layouts/piePagina');
       }
@@ -156,6 +163,7 @@ class Usuario extends CI_Controller
       $data['page'] = ucfirst("Contraseña");
       $this->load->view('layouts/encabezado', $data);
       $this->load->view('layouts/barraLateral');
+      $this->load->view('layouts/navegador');
       $this->load->view('usuario/Reestablecer', $data);
       $this->load->view('layouts/piePagina');
     }

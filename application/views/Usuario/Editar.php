@@ -61,7 +61,7 @@ switch (@$data_usuario[0]->usu_rol_id) {
 
 ?>
 
-    <div id="page-content-wrapper">
+    
         <div class="card mb-3">
 
             <div class="card-header">
@@ -136,7 +136,7 @@ switch (@$data_usuario[0]->usu_rol_id) {
 
 
         </div>
-    </div>
+    
 
     <script>
         function LlenarSelectorTipoDocumentos() {
