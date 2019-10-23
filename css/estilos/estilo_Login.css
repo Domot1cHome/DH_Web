@@ -8,6 +8,7 @@ video {
     z-index: -1;
 }
 
+
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 
@@ -27,6 +28,7 @@ video {
     src: url('../../fonts/JosefinSans/JosefinSans-Bold.ttf');
 }
 
+
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
 
@@ -36,10 +38,12 @@ video {
     box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
     height: 100%;
-    font-family: Ubuntu-Regular, sans-serif;        
+    font-family: Ubuntu-Regular, sans-serif;
 }
+
 
 /*---------------------------------------------*/
 
@@ -64,9 +68,15 @@ a:hover {
     color: #1b3815;
 }
 
+
 /*---------------------------------------------*/
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin: 0px;
 }
 
@@ -74,14 +84,16 @@ p {
     font-family: Ubuntu-Regular;
     font-size: 14px;
     line-height: 1.7;
-    color: #666666;
+    color: #6c757d!important;
     margin: 0px;
 }
 
-ul, li {
+ul,
+li {
     margin: 0px;
     list-style-type: none;
 }
+
 
 /*---------------------------------------------*/
 
@@ -96,7 +108,8 @@ input[type="number"] {
     -webkit-appearance: none;
 }
 
-input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
 
@@ -105,7 +118,8 @@ textarea {
     border: none;
 }
 
-textarea:focus, input:focus {
+textarea:focus,
+input:focus {
     border-color: transparent !important;
 }
 
@@ -141,6 +155,7 @@ textarea:-ms-input-placeholder {
     color: #1b3815;
 }
 
+
 /*---------------------------------------------*/
 
 button {
@@ -156,6 +171,7 @@ button:hover {
 iframe {
     border: none !important;
 }
+
 
 /*//////////////////////////////////////////////////////////////////
 [ Utility ]*/
@@ -181,6 +197,7 @@ iframe {
     line-height: 1.4;
     text-transform: uppercase;
 }
+
 
 /*//////////////////////////////////////////////////////////////////
 [ login ]*/
@@ -218,6 +235,7 @@ iframe {
     -ms-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
 }
 
+
 /*==================================================================
 [ Form ]*/
 
@@ -241,6 +259,7 @@ iframe {
     padding-top: 30px;
     padding-bottom: 20px;
 }
+
 
 /*------------------------------------------------------------------
 [ Input ]*/
@@ -266,6 +285,7 @@ iframe {
     border-radius: 27px;
     padding: 0 35px 0 25px;
 }
+
 
 /*------------------------------------------------------------------
 [ Focus Input ]*/
@@ -295,6 +315,7 @@ iframe {
 .input100:focus+.focus-input100 {
     width: calc(100% + 20px);
 }
+
 
 /*------------------------------------------------------------------
 [ Button ]*/
@@ -339,6 +360,7 @@ iframe {
 .login100-form-btn:hover {
     background-color: firebrick;
 }
+
 
 /*------------------------------------------------------------------
 [ Alert validate ]*/
@@ -406,6 +428,7 @@ iframe {
     }
 }
 
+
 /*//////////////////////////////////////////////////////////////////
 [ Responsive ]*/
 
@@ -413,7 +436,8 @@ iframe {
     .login100-form {
         padding: 1em;
     }
-    .login100-form-title, .wrap-login100 {
+    .login100-form-title,
+    .wrap-login100 {
         padding: 1em;
     }
 }
@@ -423,6 +447,7 @@ iframe {
         align-items: center;
     }
 }
+
 
 /*//////////////////////////////////////////////////////////////////
 
@@ -476,7 +501,8 @@ section .section-title {
     margin-top: -10px;
 }
 
-#footer ul.social li a, #footer ul.quick-links li a {
+#footer ul.social li a,
+#footer ul.quick-links li a {
     color: #ffffff;
 }
 
@@ -527,16 +553,20 @@ section .section-title {
     bottom: 0;
 }
 
-.footer-distributed .footer-left, .footer-distributed .footer-center, .footer-distributed .footer-right {
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right {
     display: inline-block;
     vertical-align: top;
 }
+
 
 /* Footer left */
 
 .footer-distributed .footer-left {
     width: 40%;
 }
+
 
 /* The company logo */
 
@@ -549,6 +579,7 @@ section .section-title {
 .footer-distributed h3 span {
     color: crimson;
 }
+
 
 /* Footer links */
 
@@ -571,6 +602,7 @@ section .section-title {
     font-weight: normal;
     margin: 0;
 }
+
 
 /* Footer Center */
 
@@ -616,6 +648,7 @@ section .section-title {
     ;
 }
 
+
 /* Footer Right */
 
 .footer-distributed .footer-right {
@@ -657,13 +690,15 @@ section .section-title {
     margin-bottom: 5px;
 }
 
+
 /* If you don't want the footer to be responsive, remove these media queries */
 
 @media (max-width:971px) {
     .footer-distributed {
         text-align: center;
     }
-    .footer-distributed .footer-right, .footer-distributed .footer-center {
+    .footer-distributed .footer-right,
+    .footer-distributed .footer-center {
         display: none;
         text-align: center;
     }

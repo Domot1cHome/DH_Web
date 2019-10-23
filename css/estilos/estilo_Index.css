@@ -25,6 +25,14 @@ p {
     font-family: Ubuntu-Regular;
     font-size: 14px;
     line-height: 1.7;
+    color: #666666;
+    margin: 0px;
+}
+
+#textoPie {
+    font-family: Ubuntu-Regular;
+    font-size: 14px;
+    line-height: 1.7;
     color: white;
     margin: 0px;
 }
@@ -83,17 +91,6 @@ button {
 
 @media (max-width:767px) {
     .footer-distributed {
-        text-align: center;
-    }
-}
-
-@media (max-width:971px) {
-    .footer-distributed {
-        text-align: center;
-    }
-    .footer-distributed .footer-right,
-    .footer-distributed .footer-center {
-        display: none;
         text-align: center;
     }
 }
