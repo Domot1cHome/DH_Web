@@ -1,18 +1,7 @@
 <footer class="footer-distributed">
 
     <div class="footer-left">
-
-        <!-- <h3>Domotic<span>Home</span></h3> -->
-        <img src="<?php echo base_url(); ?>recursos/logo.png" height="40" width="160">
-
-        <p class="footer-links">
-            <a href="#">Home</a>
-            ·
-            <a href="#">Acerca de nosotros</a>
-            ·
-            <a href="#">Contáctanos</a>
-        </p>
-
+        <!-- <img src="<?php echo base_url(); ?>recursos/logo.png" height="40" width="160"> -->
         <p class="footer-company-name">Domotic Home &copy; 2019</p>
     </div>
 
@@ -25,12 +14,12 @@
 
         <div>
             <i class="fa fa-phone"></i>
-            <p>+57 01800666</p>
+            <p>+57 3178785994</p>
         </div>
 
         <div>
             <i class="fa fa-envelope"></i>
-            <p><a href="mailto:soporte@domotichome.com">soporte@domotichome.com</a></p>
+            <p><a href="mailto:soportedomotichome@gmail.com">soportedomotichome@gmail.com</a></p>
         </div>
 
     </div>
@@ -39,15 +28,14 @@
 
         <p class="footer-company-about">
             <span>Acerca de nuestro proyecto</span>
-            <p>Somos un grupo de pelaos que quieren terminar su proyecto del SENA... </p>
+            <p>Pagina web encargada de administrar los datos de la aplicación de escritorio y movil </p>
         </p>
 
         <div class="footer-icons">
 
 
-            <a href="#"><i class="fa fa-at"></i></a>
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-github"></i></a>
+            <a href="mailto:soportedomotichome@gmail.com"><i class="fa fa-at"></i></a>
+            <a href="https://github.com/Domot1cHome"><i class="fa fa-github"></i></a>
 
         </div>
 
