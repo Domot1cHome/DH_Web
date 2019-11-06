@@ -12,30 +12,6 @@
                 <a href="<?php echo base_url() ?>" class="btn btn-outline-danger my-2 my-sm-0">Cerrar sesión</a>
             </li>
 
-<<<<<<< HEAD
-                <li class="nav-item active">
-                    <a href="<?php echo base_url();?>index.php/index/CerrarSesion" class="btn btn-outline-danger my-2 my-sm-0">Cerrar sesión</a>
-                </li>
-
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li> -->
-            </ul>
-        </div>
-    </nav>
-=======
         </ul>
     </div>
 </nav>
->>>>>>> 309c9d4e5373ea892653b876bb63b47e737e9899

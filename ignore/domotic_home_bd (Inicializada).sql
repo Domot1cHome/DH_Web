@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-08-2019 a las 05:12:16
--- Versión del servidor: 10.1.38-MariaDB
--- Versión de PHP: 7.3.2
+-- Tiempo de generación: 06-11-2019 a las 17:41:56
+-- Versión del servidor: 10.4.8-MariaDB
+-- Versión de PHP: 7.3.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -173,6 +173,8 @@ CREATE TABLE `tb_usuario` (
   `usu_rol_id` int(11) NOT NULL,
   `usu_email` varchar(50) NOT NULL,
   `usu_usuario` varchar(30) NOT NULL,
+  `fecha_creado` datetime NOT NULL,
+  `fecha_modificado` datetime NOT NULL,
   `usu_codigo` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -180,9 +182,9 @@ CREATE TABLE `tb_usuario` (
 -- Volcado de datos para la tabla `tb_usuario`
 --
 
-INSERT INTO `tb_usuario` (`usu_id`, `usu_nombre`, `usu_apellido`, `usu_tip_doc_id`, `usu_num_doc`, `usu_rol_id`, `usu_email`, `usu_usuario`, `usu_codigo`) VALUES
-(1, 'Luis Alejandro', 'Muñoz Puentes', 2, '1118311424', 1, 'alemupx@gmail.com', 'a', '123'),
-(2, 'NULL NULL', 'NULL NULL', 1, '99071102706', 2, 'soulboyx99@outlook.com', 'lxaxmxp', 'V3rd1l4c');
+INSERT INTO `tb_usuario` (`usu_id`, `usu_nombre`, `usu_apellido`, `usu_tip_doc_id`, `usu_num_doc`, `usu_rol_id`, `usu_email`, `usu_usuario`, `fecha_creado`, `fecha_modificado`, `usu_codigo`) VALUES
+(1, 'Luis Alejandro', 'Muñoz Puentes', 2, '1118311424', 1, 'alemupx@gmail.com', 'a', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '123'),
+(2, 'NULL NULL', 'NULL NULL', 1, '99071102706', 2, 'soulboyx99@outlook.com', 'lxaxmxp', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'V3rd1l4c');
 
 --
 -- Índices para tablas volcadas
