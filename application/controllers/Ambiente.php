@@ -8,8 +8,9 @@ class Ambiente extends CI_Controller
   {
     parent::__construct();
     $this->load->model('M_ambiente');
-    $this->load->library('form_validation');
-    $this->load->helper('form');
+    if (!$this->autorizador->VerificarExistenciaToken()) {
+      redirect('index');
+    }
   }
 
   public function index()
