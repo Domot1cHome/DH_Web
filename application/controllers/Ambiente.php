@@ -23,6 +23,14 @@ class Ambiente extends CI_Controller
     $this->load->view('layouts/navegador');
     $this->load->view('ambiente/index', $data);
     $this->load->view('layouts/piePagina');
+
+    // $data['page'] = ucfirst("Ambientes");
+    // $data['ambiente'] = $this->M_ambiente->TraerTodos();
+    // $this->load->view('layouts/test/encabezado', $data);
+    // $this->load->view('layouts/test/barraLateral');
+    // $this->load->view('layouts/test/navegador');
+    // $this->load->view('ambiente/index', $data);
+    // $this->load->view('layouts/test/piePagina', $data);
   }
 
   public function Crear()
