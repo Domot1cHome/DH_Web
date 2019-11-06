@@ -11,7 +11,7 @@
             <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
 
                 <li class="nav-item active">
-                    <a href="<?php echo base_url() ?>" class="btn btn-outline-danger my-2 my-sm-0">Cerrar sesión</a>
+                    <a href="<?php echo base_url();?>index.php/index/CerrarSesion" class="btn btn-outline-danger my-2 my-sm-0">Cerrar sesión</a>
                 </li>
 
                 <!-- <li class="nav-item">

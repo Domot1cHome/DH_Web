@@ -32,12 +32,4 @@
     <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
     <script src="<?php echo base_url(); ?>js/main.js"></script>
 
-
-    <!-- <nav class="navbar navbar-secundary bg-light">
-        <a class="navbar-brand" href="<?php echo base_url() ?>index.php/ambiente">
-            <?php echo $page; ?>
-        </a>
-        <a href="<?php echo base_url() ?>" class="btn btn-outline-danger my-2 my-sm-0">Cerrar sesión</a>
-    </nav> -->
-
     <div class="d-flex" id="wrapper">
