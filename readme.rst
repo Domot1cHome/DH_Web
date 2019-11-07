@@ -2,8 +2,6 @@
 ¿Buscas hacer algún aporte a los repositorios?
 ###################
 
-<<<<<<< HEAD
-
 Ten en cuenta que para mantener el control de versiones de una aplicación; el orden de las modificaciones es indispensable. Y Git ofrece herramientas como Branches y Workflows para ello.
 
 
@@ -20,7 +18,6 @@ https://www.educative.io/edpresso/how-to-checkout-a-remote-branch-in-git?affilia
 
 Fusión de ramas: https://www.youtube.com/watch?v=vu4Rv1SmzwM
 
-=======
 Ten en cuenta que para mantener el control de versiones de una aplicación; el orden de las modificaciones es indispensable. Y Git ofrece herramientas como Branches y Workflows para ello.
 
 https://www.youtube.com/watch?v=3a2x1iJFJWc
@@ -39,4 +36,3 @@ Flujos de trabajo y commits: https://www.youtube.com/watch?v=Pw4TOTIkhfk
 ###################
 
 https://www.youtube.com/watch?v=vu4Rv1SmzwM
->>>>>>> origin/luis
